@@ -15,10 +15,6 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ("name", "email", "content")
 
 
-
-
-
-
 # Register your models here.
 admin.site.register(Alumnos)
 admin.site.register(Curso)

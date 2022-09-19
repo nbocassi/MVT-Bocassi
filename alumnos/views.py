@@ -105,3 +105,7 @@ class PostDetailView(DetailView):
             context = super().get_context_data(**kwargs)
             post = Post.objects.filter(slug=self.kwargs.get('slug'))
             return context
+
+def about(request):
+
+      return render(request, "Alumnos/about.html")
