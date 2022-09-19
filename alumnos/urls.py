@@ -1,6 +1,7 @@
 from django.urls import path
 
 from alumnos import views
+from alumnos.views import PostDetailView
 
 urlpatterns = [
     ###Links templates principales
@@ -8,6 +9,7 @@ urlpatterns = [
     path('ubicacion/', views.ubicacion, name="ubicacion"),
     path('estudiantes/', views.alumnos, name="alumnos"),
     path('curso/', views.curso, name="curso"),
+    path('blog/', views.blog.as_view(), name="blog"),
     ###Links Cursos y Formularios
     path('crear-curso/', views.curso_formulario, name="curso_formulario"),
     path('crear-curso1/', views.curso_formulario1, name="curso_formulario1"),
@@ -17,11 +19,6 @@ urlpatterns = [
     ###Links Help
     path('ayuda/', views.ayuda,  name="ayuda"),
     path('contacto/', views.contacto,  name="contacto"),
+    path('<slug:slug>/', PostDetailView.as_view(), name='post-detail'
+),
 ]
-
-
-
-"""
-    path('busqueda-curso-form/', views.busqueda_cursos, name="busqueda_curso_form"),
-    path('busqueda-curso/', views.buscar, name="busqueda_curso"),
-"""

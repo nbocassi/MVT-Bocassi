@@ -1,0 +1,29 @@
+{% extends "alumnos/plantilla_base.html" %}
+
+{% block contenido_base %}
+
+<h2>
+Les dejamos nuestro nuevo post!! :)
+</h2>
+<br>
+<br>
+
+<h3>
+Titulo: {{post.title}}
+</h3>
+<br>
+<p>
+{{post.content}}
+
+
+<br>
+<br>
+Post Numero #: {{post.id}}
+<br>
+<br>
+
+<h4>
+<li class="list-inline-item"><a href="{% url 'blog' %}">Volver</a></li>
+</h4>
+
+{% endblock contenido_base %} 

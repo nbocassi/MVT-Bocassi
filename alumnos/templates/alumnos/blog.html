@@ -1,0 +1,23 @@
+{% extends "alumnos/plantilla_base.html" %}
+
+{% block contenido_base %}
+<i> <u>
+<h1>Entradas anteriores:</h1>
+</u></i>
+<br>
+
+
+{% for post in posts %}
+<a href="{% url 'post-detail' slug=post.slug  %}">
+{{post.title}}
+<br>
+
+</a>
+
+{% endfor %}
+
+
+{% endblock contenido_base%} 
+
+
+{{post.excerpt|truncatechars:50 }}

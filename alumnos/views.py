@@ -1,9 +1,15 @@
+from multiprocessing import context
+from re import template
 from typing import Dict
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from datetime import datetime
-from alumnos.models import Alumnos, Curso, Ubicacion
+from django.views.generic import TemplateView
+from django.views.generic.detail import DetailView
+
+
+from alumnos.models import Alumnos, Curso, Ubicacion, Post
 from alumnos.forms import CursoFormulario, CursoFormulario1, CursoFormulario2
 
 def inicio(request):
@@ -80,3 +86,22 @@ def buscar(request):
             return render(request, "Alumnos/curso.html", {'curso': curso})
       else:
             return render(request, "Alumnos/curso.html", {'curso': []})
+
+class blog(TemplateView):
+      template_name ="Alumnos/blog.html"
+
+      def get_context_data(self, **kwargs):
+            context = super().get_context_data(**kwargs)
+            context["posts"] = Post.postobjects.all()
+            return context
+
+
+class PostDetailView(DetailView):
+      model = Post
+      template_name = 'Alumnos/post-detail.html'
+      context_object_name = 'post'
+
+      def get_context_data(self, **kwargs):
+            context = super().get_context_data(**kwargs)
+            post = Post.objects.filter(slug=self.kwargs.get('slug'))
+            return context
