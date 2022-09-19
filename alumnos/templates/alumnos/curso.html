@@ -1,0 +1,52 @@
+{% extends "alumnos/plantilla_base.html" %}
+
+{% block style_block %}
+<style>
+  table.coder-table {
+    border:3px solid;
+  }
+  th,
+  td {
+    border:1px solid;
+    padding:5px 10px;
+  }
+</style>
+{% endblock style_block %}
+
+{% block contenido_base %}
+
+<i>
+  <u>
+  <h1>Curso</h1>
+  </u>
+  <br>
+  </i>
+  
+<a href="{% url 'curso_formulario' %}">>>>Crea tu propio curso aqui!!!<<<</a>
+<br>
+<a href="{% url 'busqueda2' %}">>>>Busca tu curso aqui!!!<<<</a>
+
+
+<table class="ubi-table2">
+    <tbody>
+      <tr>
+        <th>
+          <strong>Estamos estudiando el curso de:</strong>
+        </th>
+        <th>
+          <strong>La comision es:</strong>
+        </th>
+      </tr>
+      {% for curso in curso %} 
+      <tr>
+        <td>{{curso.nombre}}</td>
+        <td>{{curso.comision}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+{% endblock contenido_base %}

@@ -1,0 +1,34 @@
+{% extends "alumnos/plantilla_base.html" %}
+
+{% block contenido_base %}
+<i><u>
+<h1>Nuestro grupo de trabajo esta compuesto por:</h1>
+</u></i>
+<br>
+
+<table class="ubi-table">
+    <tbody>
+      <tr>
+        <th>
+          <strong>Nombre</strong>
+        </th>
+        <th>
+          <strong>Apellido</strong>
+        </th>
+      </tr>
+      {% for alumnos in alumnos %}
+      <tr>
+        <td>{{ alumnos.nombre }}</td>
+        <td>{{ alumnos.apellido }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+<br>
+<br>
+<h3>
+    <a href="{% url 'curso_formulario1' %}">>>>Crea tu usuario aqui!!!<<<</a>
+    <br>
+</h3>
+
+{% endblock contenido_base %}

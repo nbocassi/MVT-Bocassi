@@ -1,0 +1,47 @@
+{% extends "alumnos/plantilla_base.html" %}
+
+{% block contenido_base %}
+<i> <u>
+<h1>Nuestra ubicacion</h1>
+</u></i>
+<br>
+
+<h3>CoderHouse nuclea alumnos de todo el pais inclusive de otros paises, en este caso nosotros estamos en:</h3>
+<br>
+
+
+
+
+<table class="ubi-table">
+    <tbody>
+      <tr>
+        <th>
+          <strong>Barrio</strong>
+        </th>
+        <th>
+          <strong>Provincia</strong>
+        </th>
+      </tr>
+      {% for ubicacion in ubicacion %}
+      <tr>
+        <td>{{ ubicacion.barrio }}</td>
+        <td>{{ ubicacion.provincia }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <br>
+
+<h3>
+    <a href="{% url 'curso_formulario2' %}">>>>Crea tu ubicacion aqui!!!<<<</a>
+</h3>
+
+{% endblock contenido_base %}
+
+
+
+
+
+
+
