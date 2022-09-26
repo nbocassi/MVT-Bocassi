@@ -7,8 +7,6 @@ from django.template import loader
 from datetime import datetime
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
-
-
 from alumnos.models import Alumnos, Curso, Ubicacion, Post
 from alumnos.forms import CursoFormulario, CursoFormulario1, CursoFormulario2
 

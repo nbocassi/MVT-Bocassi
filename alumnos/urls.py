@@ -20,6 +20,5 @@ urlpatterns = [
     path('ayuda/', views.ayuda,  name="ayuda"),
     path('contacto/', views.contacto,  name="contacto"),
     path('about/', views.about, name="about"),
-    path('<slug:slug>/', PostDetailView.as_view(), name='post-detail',
-),
+    path('<slug:slug>/', PostDetailView.as_view(), name='post-detail'),
 ]

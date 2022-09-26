@@ -9,9 +9,11 @@
 
 {% for post in posts %}
 <a href="{% url 'post-detail' slug=post.slug  %}">
-{{post.title}}
-<br>
 
+<br>
+{{post.title}} - 
+{{post.subtitle}}
+<br>
 </a>
 
 {% endfor %}

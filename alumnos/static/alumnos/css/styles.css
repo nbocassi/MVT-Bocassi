@@ -11415,3 +11415,10 @@ table td {
   height: 100%;
   z-index: 1;
   }
+
+
+  .showblogs{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

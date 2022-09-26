@@ -15,7 +15,7 @@ Informacion general del proyecto:
 *[Curso] - Python.
 *[Comisión] - Numero: 41220
 *[Equipo] - Equipo de trabajo: Nicolas Bocassi, Nicolas Demarque, Nahuel Genari.
-*[Año] - Año de cursada: 2022
+*[Año] - Año de cursada: 2022. Inicio: Lunes 20/06/2022.
 
 
 ### tecnologias
@@ -30,6 +30,7 @@ Tecnologias utilizadas dentro del proyecto:
 *[Git]---------(https://git-scm.com/) - Versión: 2.37.3
 *[GitHub]------(https://github.com/) - Versión: Online. 
 *[Ionos]-------(https://www.ionos.com/tools/favicon-generator) - Versión: Online. 
+*[TinyMCE]-----(https://github.com/jazzband/django-tinymce) - Versión: 5.10.1
 
 ### instalacion
 

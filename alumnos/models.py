@@ -6,6 +6,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.text import slugify
+from tinymce.models import HTMLField
 
 class Alumnos(models.Model):
     nombre = models.CharField(max_length=128)
@@ -41,8 +42,9 @@ class Post(models.Model):
 
     category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
     title = models.CharField(max_length=255)
+    subtitle = models.CharField(max_length=255, null=True)
     excerpt = models.TextField(null=True)
-    content = models.TextField()
+    content = HTMLField()
     slug = models.SlugField(max_length=250, unique_for_date='published', null=False, unique=True)
     published = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
