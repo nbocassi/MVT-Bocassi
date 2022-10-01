@@ -27,13 +27,19 @@
         <!-- Navigation-->
         <nav class="navbar" style="background-color: #000000; " ; static-top>
             <div class="container">
-                <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'ubicacion' %}">Ubicacion</a>
-                <a class="navbar-brand" href="{% url 'alumnos' %}">Estudiantes</a>
-                <a class="navbar-brand" href="{% url 'curso' %}">Curso</a>
-                <a class="navbar-brand" href="{% url 'blog' %}">Blog</a>
-                <a class="navbar-brand" href="{% url 'about' %}">Acerca</a>
-                <a class="btn btn-primary" href="#signup">Iniciar Sesión </a>
+                <a class="navbar-brand"    href="{% url 'inicio' %}">Inicio</a>
+                <a class="navbar-brand"    href="{% url 'ubicacion' %}">Ubicacion</a>
+                <a class="navbar-brand"    href="{% url 'alumnos' %}">Estudiantes</a>
+                <a class="navbar-brand"    href="{% url 'curso' %}">Curso</a>
+                <a class="navbar-brand"    href="{% url 'pages' %}">Blog</a>
+                <a class="navbar-brand"    href="{% url 'about' %}">Acerca</a>
+                {% if user.is_authenticated %}
+                <a class="btn btn-primary btn-sm" href="{% url 'logout'%}">Cerrar Sesión </a>
+                {% else %}
+                <a class="btn btn-primary btn-sm" href="{% url 'register'%}">Registrate </a>
+                <a class="btn btn-primary btn-sm" href="{% url 'login'%}">Iniciar Sesión </a>
+                {% endif %}
+               
             </div>
         </nav>
 

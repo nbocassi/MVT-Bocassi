@@ -1,7 +1,7 @@
 {% extends "alumnos/plantilla_base.html" %}
 
 {% block contenido_base %}
-
+{% if user.is_authenticated %}
 
 {% for post in posts %}
 
@@ -12,6 +12,9 @@
 {% endfor %}
 
 
+{% else %}
+No tienes permiso para estar aqui! (Y lo sabes!)
+{% endif %}
 
 
 {% endblock contenido_base%} 

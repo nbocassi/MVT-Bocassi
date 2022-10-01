@@ -91,7 +91,7 @@ def eliminarpost (request, post_title):
       messages.success(request, "Tu post se elimino correctamente!")
       posts = Post.objects.all()
       context = {"posts":posts}
-      return render(request, "Alumnos/blog.html")
+      return render(request, "Alumnos/pages.html")
 
 
 
@@ -186,7 +186,7 @@ def curso_formulario(request):
 #----Experimental----#
 
 class blog(TemplateView):
-      template_name ="Alumnos/blog.html"
+      template_name ="Alumnos/pages.html"
 
       def get_context_data(self, **kwargs):
             context = super().get_context_data(**kwargs)

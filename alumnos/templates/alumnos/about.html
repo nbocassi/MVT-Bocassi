@@ -1,4 +1,5 @@
 {% extends "alumnos/plantilla_base.html" %}
+{% load static%}
 
 {% block contenido_base %}
 <h1> 
@@ -17,8 +18,10 @@
 <br>
 <br>
 <h3> 
-Acerca de Nahuel Genari:
+    Acerca de Nahuel Genari:
 </h3>
+<img src="{% static 'alumnos/assets/img/nahuel.jpg' %}" width="250" height="250" alt="Alumno Nahuel" class="center">
+
 <h6>
 <p>Originario de Santo Tome, en Santa Fe, emigro a la capital porteña en el año 2003 al barrio de Pompeya donde vivio hasta los 28 años. 
 <p>Luego se mudo al barrio de Villa Devoto donde reside actualmente. 
@@ -28,6 +31,7 @@ Acerca de Nahuel Genari:
 <h3> 
     Acerca de Nicolas Bocassi: 
 </h3>
+<img src="{% static 'alumnos/assets/img/hacker.png' %}" width="250" height="250" alt="Alumno Nicolas Bocassi" class="center">
 <h6>
     <p>Nativo de Buenos Aires, su deporte favorito es el futbol y su hobby el cocinar. 
     <p>Tiene como mascostas 2 gatos y un perro. 
@@ -37,7 +41,7 @@ Acerca de Nahuel Genari:
 <h3> 
     Acerca de Nicolas Demarque:
 </h3>
-
+<img src="{% static 'alumnos/assets/img/nicodemarque.jpg' %}" width="250" height="250" alt="Alumno Nicolas Demarque" class="center">
 <h6>
     <p>Nacido y criado en Mendoza, la capital argentina del vino. 
     <p>Trabaja en una bodega y ademas le gusta programar. 

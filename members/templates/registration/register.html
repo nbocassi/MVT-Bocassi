@@ -1,0 +1,13 @@
+{% extends "alumnos/plantilla_base.html" %}
+{%block title %} Registrate {%endblock%}
+{% block contenido_base %}
+
+<h1> Registrate </h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button class="btn btn-primary">Registrate</button>
+  
+
+
+{% endblock contenido_base %}

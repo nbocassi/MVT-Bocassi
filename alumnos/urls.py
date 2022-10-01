@@ -9,7 +9,7 @@ urlpatterns = [
     path('ubicacion/', views.ubicacion, name="ubicacion"),
     path('estudiantes/', views.alumnos, name="alumnos"),
     path('curso/', views.curso, name="curso"),
-    path('blog/', views.blog.as_view(), name="blog"),
+    path('pages/', views.blog.as_view(), name="pages"),
     ###Links Cursos y Formularios
     path('crear-curso/', views.curso_formulario, name="curso_formulario"),
     path('crear-curso1/', views.curso_formulario1, name="curso_formulario1"),

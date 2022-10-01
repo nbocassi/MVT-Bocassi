@@ -8,8 +8,11 @@
 <h1>Blog!</h1>
 </u></i>
 <br>
+{% if user.is_authenticated %}
+<a href="{% url 'addpost' %}"class="btn btn-primary"> Crea un nuevo Post aqui!!! :)  </a>   
+{% endif %}
 
-<a href="{% url 'addpost' %}"class="btn btn-primary"> Crea un nuevo Post aqui!!! :)  </a>
+
 
 <br>
 <br>
@@ -22,10 +25,18 @@
 {% for post in posts %}
 <a href="{% url 'post-detail' slug=post.slug  %}">
 <li>{{post.title}} - {{post.subtitle}}</li>
-<br>
 <small>
+{% if user.is_authenticated %}
 <a href="{% url 'article-update' post.pk %}" class="btn btn-warning btn-sm"> Actualizar </a>
-<a href="{% url 'eliminarpost' post.title %}" class="btn btn-danger btn-sm"> Eliminar </a>
+<a href="{% url 'eliminarpost' post.title %}" class="btn btn-danger btn-sm"> Eliminar </a>  
+
+{% else %}
+
+{% endif %}
+
+
+
+{{post.content|slice:"50"}}
 </small>
 
 {% endfor %}
