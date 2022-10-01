@@ -1,9 +1,26 @@
 {% extends "alumnos/plantilla_base.html" %}
 
 {% block contenido_base %}
+
+{% for msg in messages %}
+
+{{msg}}
+
+{% endfor %}
+
+<h3>
+
+
+
 <i><u>
-<h1>Algunos de nuestros usuarios son:</h1>
+<h1>Algunos de nuestros usuarios:</h1>
 </u></i>
+<br>
+<a href="{% url 'curso_formulario1' %}" class="btn btn-primary">Crea tu usuario aqui!!!</a>
+<br>
+<br>
+</h3>
+
 <br>
 
 <table class="ubi-table">
@@ -24,15 +41,5 @@
       {% endfor %}
     </tbody>
   </table>
-<br>
-<br>
-<h2>
-  No tienes usuario?
-</h2>
-
-<h3>
-    <a href="{% url 'curso_formulario1' %}">>>>Crea tu usuario aqui!!!<<<</a>
-    <br>
-</h3>
 
 {% endblock contenido_base %}

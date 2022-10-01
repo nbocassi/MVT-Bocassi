@@ -1,22 +1,44 @@
 {% extends "alumnos/plantilla_base.html" %}
 
 {% block contenido_base %}
+
+
+
 <i> <u>
-<h1>Entradas anteriores:</h1>
+<h1>Blog!</h1>
 </u></i>
+<br>
+
+<a href="{% url 'addpost' %}"class="btn btn-primary"> Crea un nuevo Post aqui!!! :)  </a>
+
+<br>
+<br>
+<br>
+<h3> Entradas anteriores: </h3>
+
 <br>
 
 
 {% for post in posts %}
 <a href="{% url 'post-detail' slug=post.slug  %}">
-
+<li>{{post.title}} - {{post.subtitle}}</li>
 <br>
-{{post.title}} - 
-{{post.subtitle}}
-<br>
-</a>
+<small>
+<a href="{% url 'article-update' post.pk %}" class="btn btn-warning btn-sm"> Actualizar </a>
+<a href="{% url 'eliminarpost' post.title %}" class="btn btn-danger btn-sm"> Eliminar </a>
+</small>
 
 {% endfor %}
+
+
+{% for msg in messages %}
+
+{{msg}}
+
+{% endfor %}
+
+
+
 
 
 {% endblock contenido_base%} 

@@ -1,0 +1,17 @@
+{% extends "alumnos/plantilla_base.html" %}
+
+{% block contenido_base %}
+
+
+{% for post in posts %}
+
+<li>{{post}}</li>
+<button> 
+    <a href="{% url 'eliminarpost' post.title %}"> Eliminar </a>
+</button> 
+{% endfor %}
+
+
+
+
+{% endblock contenido_base%} 

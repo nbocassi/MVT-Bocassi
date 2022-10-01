@@ -1,0 +1,43 @@
+{% extends "alumnos/plantilla_base.html" %}
+
+{% block contenido_base %}
+
+<form action="/blog/{{post.title}}" method="POST">
+    {% csrf_token %}
+    <tr>
+        <td> Titulo</td>
+        <td><input type="text" name="age" value={{post.title}}></td>
+    </tr>
+   <tr>
+        <td> Subtitulo</td>
+        <td><input type="text" name="age" value={{post.subtitle}}></td>
+    </tr>
+    <tr>
+        <td> Descripcion</td>
+        <td><textarea name='address'>{{post.excerpt}}</textarea></td>
+    </tr>
+    <tr>
+        <td> Contenido</td>
+        <td><textarea name='address'>{{post.content}}</textarea></td>
+    </tr>
+    <tr>
+        <td><button>Submit</button></td>
+    </tr>
+</form>
+
+
+
+
+{% endblock contenido_base %}
+
+category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
+title = models.CharField(max_length=255)
+subtitle = models.CharField(max_length=255, null=True)
+excerpt = models.TextField(null=True)
+content = HTMLField()
+slug = models.SlugField(max_length=250, unique_for_date='published', null=False, unique=True)
+published = models.DateTimeField(default=timezone.now)
+author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
+status = models.CharField(max_length=10, choices=options, default='draft')
+objects = models.Manager()
+postobjects = PostObjects()
