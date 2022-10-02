@@ -6,6 +6,7 @@
 3. [Instalación](#instalacion)
 4. [Colaboración](#colaboracion)
 5. [FAQs](#faqs)
+6. [LINK DEMO](#demo)
 
 
 ### informacion general
@@ -65,3 +66,6 @@ Sin duda el comienzo de la utilizacion de Django y Git fue todo un reto.
 4. **Que lenguajes y tecnologias se utilizaron para el desarrollo del proyecto?**
 Deberias revisar la seccion <tecnologias> de este documento :)
 
+### demo
+
+https://www.loom.com/share/7c2a21af9407453a8ed2c54a7b002bd9
