@@ -1,5 +1,5 @@
 from django import forms 
-from .models import Post
+from .models import Post, Avatar
 
 class CursoFormulario(forms.Form):
     nombre = forms.CharField()
@@ -28,3 +28,9 @@ class postform(forms.ModelForm):
     content = forms.CharField()
     header_image = forms.ImageField()
     slug = forms.CharField()
+
+class AvatarFormulario(forms.ModelForm):
+
+    class Meta:
+        model = Avatar
+        fields = ['imagen']

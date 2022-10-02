@@ -34,6 +34,7 @@
                 <a class="navbar-brand"    href="{% url 'pages' %}">Blog</a>
                 <a class="navbar-brand"    href="{% url 'about' %}">Acerca</a>
                 {% if user.is_authenticated %}
+                <a class="btn btn-primary btn-sm" href="{% url 'avatar'%}">Ver Avatar</a>
                 <a class="btn btn-primary btn-sm" href="{% url 'edit_profile'%}">Editar Perfil</a>
                 <a class="btn btn-primary btn-sm" href="{% url 'logout'%}">Cerrar Sesión </a>
                 {% else %}

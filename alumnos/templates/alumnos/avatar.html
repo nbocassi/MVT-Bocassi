@@ -1,0 +1,15 @@
+{% extends "alumnos/plantilla_base.html" %}
+
+{% block contenido_base %}
+
+<h2> Avatar de usuario: </h2>
+<br>
+<br>
+<img src="{{user.avatar.imagen.url}}" width="250" height="250" alt="Avatar de Alumno" class="rounded-circle"/>
+<br>
+<br>
+
+<h4> Actualizar avatar: </h4>
+<a class="btn btn-primary btn-sm" href="{% url 'nahuel' %}">Agregar Avatar</a>
+
+{% endblock contenido_base %}

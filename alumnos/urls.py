@@ -1,7 +1,7 @@
 from django.urls import path
 
 from alumnos import views
-from alumnos.views import PostDetailView, addpost, ArticleDetailView, Update_Post_View
+from alumnos.views import PostDetailView, addpost, ArticleDetailView, Update_Post_View, nahuel
 
 
 
@@ -20,7 +20,9 @@ urlpatterns = [
     path('buscar/', views.buscar, name="buscar"),
     ###Links Help
     path('ayuda/', views.ayuda,  name="ayuda"),
+    path('nahuel/', views.nahuel, name="nahuel"),
     path('contacto/', views.contacto,  name="contacto"),
+    path('avatar/', views.Avatar,  name="avatar"),
     path('about/', views.about, name="about"),
     path('eliminarpost/<post_title>', views.eliminarpost, name="eliminarpost"),
     #path('createpost/', views.createpost, name="createpost"),
@@ -29,4 +31,4 @@ urlpatterns = [
     path('<slug:slug>/', PostDetailView.as_view(), name='post-detail'),
     path('article/<int:pk>/', ArticleDetailView.as_view(), name='article-detail'),
     path('article/update/<int:pk>/', Update_Post_View.as_view(), name='article-update'),
-]
+    ]

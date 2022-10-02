@@ -8,11 +8,16 @@ from django.template import loader
 from datetime import datetime
 from django.views.generic import TemplateView, CreateView, DetailView, ListView, UpdateView
 from django.views.generic.detail import DetailView
-from alumnos.models import Alumnos, Curso, Ubicacion, Post
+from alumnos.models import Alumnos, Curso, Ubicacion, Post, Avatar
 from alumnos.forms import CursoFormulario, CursoFormulario1, CursoFormulario2
 from django.contrib import messages
-from .forms import postform
+from .forms import postform, AvatarFormulario
 from .models import Post
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse, reverse_lazy
+from django.contrib.auth.models import User
+
 
 #----Sección Pages----#
 
@@ -220,3 +225,24 @@ class Update_Post_View(UpdateView):
       model = Post
       template_name = 'Alumnos/update_post.html'
       fields = ['title', 'subtitle', 'content']
+
+
+def Avatar(request):
+      return render(request, "Alumnos/avatar.html")
+
+
+
+@login_required
+def nahuel(request):
+    if request.method == 'POST':
+
+        form = AvatarFormulario(request.POST, request.FILES) #aquí me llega toda la información del html
+
+        if form.is_valid:   #Si pasó la validación de Django
+            avatar = form.save()
+            avatar.user = request.user
+            avatar.save()
+            return redirect(reverse('avatar'))
+
+    form = AvatarFormulario() #Formulario vacio para construir el html
+    return render(request, "Alumnos/nahuel.html", {"form":form})

@@ -41,7 +41,7 @@ class Post(models.Model):
         ('published', 'Published'),
     )
     category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=255)
     header_image = models.ImageField(null = True, blank=True, upload_to="images/")
     subtitle = models.CharField(max_length=255, null=True)
     excerpt = models.TextField(null=True)
@@ -83,3 +83,11 @@ class Comment (models.Model):
 
         def __str__(self):
             return f"Comment By {self.name}"
+
+
+class Avatar(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    imagen = models.ImageField(upload_to='avatares', null=True, blank=True)
+
+    def __str__(self):
+        return f"Imagen de: {self.user}"
