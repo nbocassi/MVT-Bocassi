@@ -26,4 +26,5 @@ class postform(forms.ModelForm):
     subtitle = forms.CharField()
     excerpt = forms.CharField()
     content = forms.CharField()
+    header_image = forms.ImageField()
     slug = forms.CharField()

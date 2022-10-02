@@ -1,0 +1,11 @@
+{% extends "alumnos/plantilla_base.html" %}
+{%block title %} Editar Perfil {%endblock%}
+{% block contenido_base %}
+
+<h1> Editar Perfil </h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button class="btn btn-primary">Guardar</button>
+
+{% endblock contenido_base %}

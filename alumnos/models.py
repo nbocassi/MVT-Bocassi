@@ -42,6 +42,7 @@ class Post(models.Model):
     )
     category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
     title = models.CharField(max_length=255)
+    header_image = models.ImageField(null = True, blank=True, upload_to="images/")
     subtitle = models.CharField(max_length=255, null=True)
     excerpt = models.TextField(null=True)
     content = HTMLField()

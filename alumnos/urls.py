@@ -3,6 +3,8 @@ from django.urls import path
 from alumnos import views
 from alumnos.views import PostDetailView, addpost, ArticleDetailView, Update_Post_View
 
+
+
 urlpatterns = [
     ###Links templates principales
     path('', views.inicio, name="inicio"),
@@ -27,4 +29,5 @@ urlpatterns = [
     path('<slug:slug>/', PostDetailView.as_view(), name='post-detail'),
     path('article/<int:pk>/', ArticleDetailView.as_view(), name='article-detail'),
     path('article/update/<int:pk>/', Update_Post_View.as_view(), name='article-update'),
+
 ]
